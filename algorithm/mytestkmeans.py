@@ -1,5 +1,5 @@
 
-from mykmeans import *
+from algorithm.mykmeans import *
 
 ## step 1: load data
 print("step 1: load data...")

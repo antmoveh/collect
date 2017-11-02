@@ -1,15 +1,9 @@
-import math
-from pyecharts import Polar
+from pyecharts import Line
 
-data = []
-for i in range(5):
-    for j in range(101):
-        theta = j / 100 * 360
-        alpha = i * 360 + theta
-        r = math.pow(math.e, 0.003 * alpha)
-        data.append([r, theta])
-polar = Polar("极坐标系示例")
-polar.add("", data, symbol_size=0, symbol='circle', start_angle=-25, is_radiusaxis_show=False,
-          area_color="#f3c5b3", area_opacity=0.5, is_angleaxis_show=False)
-polar.show_config()
-polar.render()
+attr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日', ]
+line = Line("折线图示例")
+line.add("最高气温", attr, [11, 11, 15, 13, 12, 13, 10], mark_point=["max", "min"], mark_line=["average"])
+line.add("最低气温", attr, [1, -2, 2, 5, 3, 2, 0], mark_point=["max", "min"],
+         mark_line=["average"], yaxis_formatter="°C")
+line.show_config()
+line.render()

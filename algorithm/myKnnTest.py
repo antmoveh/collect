@@ -1,5 +1,6 @@
-import myKnn as kNN
 from numpy import array
+
+from algorithm import myKnn as kNN
 
 dataSet, labels = kNN.createDataSet()
 

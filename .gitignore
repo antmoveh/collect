@@ -1,5 +1,2 @@
 *.pyc
 /.idea/*
-/__pycache__/*
-/fluency_python/__pycache__/*
-/laboratory/__pycache__/*
