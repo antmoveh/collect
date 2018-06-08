@@ -1,16 +1,14 @@
 from time import time
 
 
-class ttl_property:
+class TTLClass:
 
     def __init__(self, ttl=None):
         self.ttl = ttl
 
-
     def __call__(self, func):
         self.func = func
         return self
-
 
     def __get__(self, instance, owner):
         if not hasattr(instance, self.__class__.__name__):
@@ -22,7 +20,6 @@ class ttl_property:
             self.__set__(instance, value)
             # setattr(instance, owner.__name__, (value, time()))
         return value
-
 
     def __set__(self, instance, value):
         instance.__dict__[self.__class__.__name__] = (value, time())

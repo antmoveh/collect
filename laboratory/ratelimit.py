@@ -16,6 +16,7 @@ class RateLimiter(object):
 
     def __call__(self, f):
         print("__call__")
+
         @functools.wraps(f)
         def wrapped(*args, **kwargs):
             with self:

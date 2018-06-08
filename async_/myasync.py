@@ -9,11 +9,15 @@ class Potato:
         for i in range(num):
             potatos.append(cls.__new__(cls))
         return potatos
+
+
 all_potatos = Potato.make(5)
+
 
 async def ask_for_potato():
     await asyncio.sleep(random.random())
     all_potatos.extend(Potato.make(random.randint(1, 10)))
+
 
 async def take_potatos(num):
     count = 0
@@ -27,9 +31,9 @@ async def take_potatos(num):
             if count == num:
                 break
 
+
 async def buy_potatos():
     bucket = [p async for p in take_potatos(50)]
-
 
 
 def main():

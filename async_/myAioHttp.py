@@ -24,7 +24,7 @@ class parseListPage():
 
 
 page_num = 5
-page_url_base = 'http://blog.csdn.net/u014595019/article/list/'
+page_url_base = 'http://blog.csdn.server_implement/u014595019/article/list/'
 page_urls = [page_url_base + str(i+1) for i in range(page_num)]
 loop = asyncio.get_event_loop()
 ret_list = []

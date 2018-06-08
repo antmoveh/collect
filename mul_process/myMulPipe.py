@@ -1,4 +1,3 @@
-#coding: utf-8
 import multiprocessing as mp
 import xlrd
 import os

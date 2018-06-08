@@ -4,6 +4,7 @@ import inspect
 DB_NAME = 'data/schedule2_db'
 CONFRENCE = 'conference.115'
 
+
 class Record:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
@@ -14,8 +15,10 @@ class Record:
         else:
             return NotImplemented
 
+
 class MissingDatabaseError(RuntimeError):
     """需要数据库但没有指定数据库时抛出。"""
+
 
 class DbRecord(Record):
 
@@ -47,6 +50,7 @@ class DbRecord(Record):
             return '<{} serial={!r}>'.format(cls_name, self.serial)
         else:
             return super().__repr__()
+
 
 class Event(DbRecord):
 

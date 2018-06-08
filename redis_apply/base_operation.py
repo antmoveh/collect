@@ -16,6 +16,9 @@ class RedisHelper(object):
         pub.parse_response()
         return pub
 
+
+
+
 # obj = RedisHelper()
 # obj.publish('hello')
 #
@@ -26,8 +29,8 @@ class RedisHelper(object):
 #     print(msg)
 
 
-pool = redis.ConnectionPool(host='localhost', port=6379)
-r = redis.Redis(connection_pool=pool)
+pool = redis_operation.ConnectionPool(host='localhost', port=6379)
+r = redis_operation.Redis(connection_pool=pool)
 # String 操作
 # r.set("name", "zhangsan")
 # r.setex("name", "zz", 10)

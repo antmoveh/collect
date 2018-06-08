@@ -2,9 +2,11 @@
 
 from socket import *
 from subprocess import Popen, PIPE
-import time, socketserver
+import time
+import socketserver
 
-class MyServer():
+
+class MyServer:
 
     def __init__(self):
         self.sock = None

@@ -6,7 +6,6 @@ class Book:
     def __init__(self):
         self._price = 100.0
 
-
     @ttl_property(ttl=2)
     def price(self):
         self._price = self._price * 0.8

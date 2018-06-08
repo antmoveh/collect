@@ -93,6 +93,7 @@ class Vector:
             raise TypeError(msg.format(cls=cls))
 
     shortcut_names = 'xyzt'
+
     def __getattr__(self, name):
         cls = type(self)
         if len(name) == 1:
@@ -141,7 +142,6 @@ class Vector:
             outer_fmt = '({})'
         components = (format(c, fmt_spec) for c in coords)
         return outer_fmt.format(', '.join(components))
-
 
 
 v1 = Vector([3, 4, 5])
