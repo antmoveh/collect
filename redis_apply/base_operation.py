@@ -17,11 +17,8 @@ class RedisHelper(object):
         return pub
 
 
-
-
 # obj = RedisHelper()
 # obj.publish('hello')
-#
 #
 # redis_sub = obj.subscribe()
 # while True:
@@ -29,8 +26,8 @@ class RedisHelper(object):
 #     print(msg)
 
 
-pool = redis_operation.ConnectionPool(host='localhost', port=6379)
-r = redis_operation.Redis(connection_pool=pool)
+pool = redis.ConnectionPool(host='localhost', port=6379)
+r = redis.StrictRedis(connection_pool=pool)
 # String 操作
 # r.set("name", "zhangsan")
 # r.setex("name", "zz", 10)
@@ -73,7 +70,7 @@ r = redis_operation.Redis(connection_pool=pool)
 # print(r.get("name"))
 
 
-#Hash 操作
+# Hash 操作
 # r.hset('dic_name', 'a1', 'aa')
 # dic = {'a1': 'aa', 'b1': 'bb'}
 # r.hmset('dic_name', dic)
@@ -93,14 +90,14 @@ r = redis_operation.Redis(connection_pool=pool)
 # print(r.hincrbyfloat("demo", "b", amount=1.0))
 
 
-#List 操作
+# List 操作
 # r.lpush("list_name", 2)
 # r.lpush("list_name", 3, 4, 5)
 # r.rpush("list_name", 2, 3, 4, 5)
 # r.rpushx("list_name", 0)
 # r.lpushx("list_name", 0)
-#r.linsert("list_name", "BEFORE", "2", "SS")
-#r.lset("list_name", 0, "bbb")
+# r.linsert("list_name", "BEFORE", "2", "SS")
+# r.lset("list_name", 0, "bbb")
 # #r.lrem("list_name", "SS", num=0)
 # print(r.lpop("list_name"))
 # print(r.rpop("list_name"))
@@ -111,14 +108,14 @@ r = redis_operation.Redis(connection_pool=pool)
 # r.brpoplpush("list_name", "list_name1", timeout=0)
 # r.lpush("list_name", 3, 4, 5)
 # r.lpush("list_name1", 3, 4, 5)
-#print(r.llen("list_name"))
+# print(r.llen("list_name"))
 # while True:
 #     print(r.blpop(["list_name", "list_name1"], timeout=0))
 #     print(r.brpop(["list_name", "list_name1"], timeout=0))
 #     print(r.lrange("list_name", 0, -1), r.lrange("list_name1", 0, -1))
 
 
-#Set 操作
+# Set 操作
 # r.sadd("set_name", "aa")
 # r.sadd("set_name", "aa", "bb")
 # print(r.smembers("set_name"))
@@ -158,12 +155,13 @@ r = redis_operation.Redis(connection_pool=pool)
 # r.zunionstore("zset_name2", ("zset_name1", "zset_name"), aggregate="MAX")
 # print(r.zscan("zset_name2"))
 
-import datetime
+
+# import datetime
 # 其他常用操作
 # print(r.delete("name"))
 # print(r.exists("demo"))
 # print(r.keys(pattern='*'))
-#print(r.expire("demo", 6))
+# print(r.expire("demo", 6))
 # print(r.rename("set_name", "set_name7"))
 # print(r.move("set_name2", 1))
 # print(r.randomkey())
