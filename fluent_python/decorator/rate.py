@@ -1,4 +1,4 @@
-from laboratory.ratelimit import RateLimiter
+from fluent_python.decorator.ratelimit import RateLimiter
 
 
 def callback(value):

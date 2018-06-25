@@ -16,7 +16,7 @@ jenkins_server = jenkins.Jenkins(url=jenkins_server_url, username=jenkins_user, 
 # print(last_build_number)
 # build_info = jenkins_server.get_build_console_output('androidtest', last_build_number)
 # print(build_info.encode('utf-8'))
-# build_dict = {'module': '排期模块', 'pom': 'cias-base/pom.xml', 'project': 'model', 'git_file': '/cias-base', 'version': '1.0.0', 'order': 1, 'package_type': '.jar', 'timed_task': 'package_version-SNAPSHOT.jar', 'git': 'http://git.kokozu.net/zhangkaixiang/cias-projects.git', 'maven': '-U clean timed_task -Dmaven.test.skip=true -X', 'branch': 'master'}
+# build_dict = {'module': '排期模块', 'pom': 'cias-base/pom.xml', 'project': 'model', 'git_file': '/cias-base', 'version': '1.0.0', 'order': 1, 'package_type': '.jar', 'celery_app': 'package_version-SNAPSHOT.jar', 'git': 'http://git.kokozu.net/zhangkaixiang/cias-projects.git', 'maven': '-U clean celery_app -Dmaven.test.skip=true -X', 'branch': 'master'}
 # jenkins_server.build_job(name='model', parameters=build_dict)
 # jenkins_server.copy_job('plans', 'mytest')
 # jenkins_server.enable_job('mytest')
