@@ -97,3 +97,21 @@ sys.stdout = LogFile('memory_profile_log')
 
 sys.stdout = LogFile('memory_profile_log', reportIncrementFlag=False)
 """
+
+"""
+垃圾回收
+引用计数归零，循环引用
+分代垃圾回收，默认0代，第一轮回收后对象进入1代，1代回收后对象进入2代。根据回收频率0代频率完成后，开始进行一代，一代次数完成后开始回收二代
+
+import gc
+gc module
+gc.enable() gc.disable() gc.isenabled() gc.collection()
+gc.set_threshold(t0, t1, t2) gc.get_threshold() 设置gc预警阀值，达到后就进行回收
+gc.get_objects()
+"""
+
+"""
+内存泄漏 gc objgraph
+https://www.cnblogs.com/xybaby/p/7491656.html
+"""
+
