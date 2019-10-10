@@ -1,9 +1,2 @@
 
-#
-收集python语言相关
-log app
-mongo app
-mysql app
-redis app
-celery app
-sundry
+- python 语言相关连接各种实例代码
